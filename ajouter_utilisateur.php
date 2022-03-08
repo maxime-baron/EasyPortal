@@ -2,7 +2,7 @@
 include('template.php');
 
 if( !empty($_GET['identifiant']) && !empty($_GET['mot_de_passe']) && !empty($_GET['Type']) )
-{
+{ 
 
 	$requete = $pdo->prepare("INSERT INTO `Utilisateur` (`id`, `identifiant`, `mot_de_passe`, `Type`);");
 	$requete->bindParam(':identifiant', $_GET['identifiant']);
