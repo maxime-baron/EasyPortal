@@ -1,0 +1,157 @@
+-Verif les plaques API->BDD
+-----------------------------------
+BDD : SELECT username,firstName,lastName,perm,plateNumber from user INNER JOIN plates WHERE/ON username = propietaire and username = "test"
+server/api/utilisateur=propietaire  : 
+{
+username = "test",
+firstName = "Jean",              
+lastName = "Claude",
+perm = "users",
+plates = {
+	plate = "HD-151-FG",
+	plate = "FD-191-FT",
+}
+-----------------------------------
+BDD : SELECT username,firstName,lastName,perm,plateNumber from user INNER JOIN plates WHERE/ON username = propietaire
+server/api/utilisateurs : 
+{
+ {
+   username = "test",
+   firstName = "Jean",
+   lastName = "Claude",
+   perm = "users",
+   plates = {
+	plate = "HD-151-FG",
+	plate = "FD-191-FT",
+   }
+ {
+ {
+   username = "test2",
+   firstName = "Test",
+   lastName = "tausd",
+   perm = "users",
+   plates = {
+	plate = "FD-191-FT",
+	plate = "FT-122-GT",
+   }
+ }
+}
+-----------------------------------
+BDD : SELECT * from plate
+server/api/plaques :
+
+{
+  {
+	plate = {
+	 number = "HH-123-FH",
+	 owner = "username"
+  }
+	plate = {
+	 number = "AA-123-BB",
+	 owner = "username"
+  }
+	plate = {
+	 number = "CA-153-BB",
+	 owner = "username"
+  }
+}
+----------------------------------
+BDD : SELECT * from plate WHERE number = CA-153-BB
+server/api/plaque=GRTJGFJ :
+
+{
+  {
+	plate = {
+	 number = "AA-123-BB",
+	 owner = "propietaire"
+  }
+	plate = {
+	 number = "CA-153-BB",
+	 owner = "propietaire"
+  }
+}
+----------------------------------
+BDD : INSERT INTO plates (number,owner) VALUES (AA-123-BB,Marc77)  
+server/api?AjouterPlaque&plaque=AA-123-BB&proprietaire=Marc77
+{
+  status = "OK",
+  added = {
+	number = "AA-123-BB",
+	owner = "Marc77"
+  },
+  error = "Null"/"L'utilisateur à atteint le maximum de plaque"
+}
+
+erreurs : 
+- Null =  pas d'érreur
+- L'utilisateur à atteint le maximum de plaque
+- Plaque déja présente
+
+----------------------------------
+BDD : DELETE * FROM plates WHERE number = AA-123-BB
+server/api?SupprimerPlaque&plaque=AA-123-BB
+{
+  status = "OK",
+  deleted = {
+	number = AA-123-BB,
+	owner = Marc77
+  },
+  error = "Null"/"La plaque n'existe pas"
+}
+
+erreurs : 
+
+- La plaque n'existe pas
+
+----------------------------------
+
+BDD : DELETE * FROM user WHERE username = Marc77
+server/api?SupprimerUser&username=Marc77
+{
+  status = "OK",
+  deleted = {
+	username = Marc77,
+	lastName = Marc,
+	fisrtName = Claude,
+	perm = user,
+  },
+  error = "Null"/"L'utilisateur n'existe pas"
+}
+
+erreurs : 
+
+- L'utilisateur n'existe pas
+
+----------------------------------
+
+BDD : UPDATE user SET perm = user WHERE username = Marc77 
+server/api/SupprimerUser = Marc77
+{
+  status = "OK",
+  modified = {
+	perm = user,
+  },
+  error = "Null"/"L'utilisateur n'existe pas"
+}
+
+erreurs : 
+
+- L'utilisateur n'existe pas
+- Permission incorrect
+
+----------------------------------
+
+BDD : UPDATE plate SET number = AA-123-BB WHERE owner = proprietaire AND number = AA-123-BB
+server/api/SupprimerUser = proprietaire
+{
+  status = "OK",
+  modified = {
+	perm = user,
+  },
+  error = "Null"/"L'utilisateur n'existe pas"
+}
+
+erreurs : 
+
+- L'utilisateur n'existe pas
+- Permission incorrect
