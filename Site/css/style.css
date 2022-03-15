@@ -11,7 +11,7 @@ body{
 h1{
     font-family: 'Dancing Script';
     font-weight: 500;
-    font-size: 72px;
+    font-size: 4vw;
 }
 
 h2{
@@ -22,13 +22,14 @@ h2{
 
 p {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.85vw;
 }
 
 .content {
     display: flex;
     height: 100vh;
-    width: 1440px;
+    width: 80%;
+    min-width: 1024px;
     margin: auto;
     padding: 30px;
 }
@@ -43,14 +44,14 @@ p {
 
 .camera-render{
     background-color: green;
-    width: 625px;
-    height: 445px;
+    width: 90%;
+    height: 50%;
 }
 
 .logs{
     background-color: red;
-    width: 625px;
-    height: 445px;
+    width: 90%;
+    height: 50%;
 }
 
 
@@ -62,6 +63,7 @@ p {
 .top-view {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .title {
@@ -72,6 +74,8 @@ p {
 
 .displ {
     display: flex;
+    width: 47%;
+    justify-content: space-between;
 }
 
 .left-displ {
@@ -79,24 +83,29 @@ p {
     flex-direction: column;
     align-content: flex-start;
     justify-content: space-between;
+    width: 45%;
 }
 
 .stats {
-    margin: 0 20px 0 0;
-
-    height: 60px;
-    width: 140px;
+    max-height: 60px;
+    height: 100%;
+    max-width: 140px;
+    width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
+.stat-label{
+    margin-left: 5%;
+}
+
 .stats span{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.8vw;
     color: #FFFFFF;
 
     width: 42px;
@@ -108,13 +117,14 @@ p {
 }
 
 .stats p{
-    width: 80px;
+    width: 100%;
     font-weight: 500;
 }
 
 .week-stats {
     background: #D6FFD5;
     border-radius: 12px;
+    margin: 0 0 8px 0;
 }
 
 .week-stats span{
@@ -133,8 +143,10 @@ p {
 }
 
 .open-button {
-    height: 140px;
-    width: 140px;
+    max-height: 140px;
+    height: 100%;
+    max-width: 140px;
+    width: 45%;
     background: #EEDDFF;
     border-radius: 12px;
     padding: 13px;
@@ -154,7 +166,8 @@ p {
 
 .user-btn{
     width: 300px;
-    height: 125px;
+    min-height: 125px;
+    height: auto;
     border-radius: 12px;
     padding: 11px;
     cursor: pointer;
@@ -180,6 +193,10 @@ p {
     transition: ease-in 0.2s;
 }
 
+.user-list {
+    width: 100%;
+}
+
 tr{
     height: 45px;
     border-radius: 14px;
@@ -188,16 +205,27 @@ tr{
 th{
     width: 140px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1vw;
     vertical-align: middle;
     padding: 0 20px;
 }
 
 td{
     font-weight: 300;
-    font-size: 18px;
+    font-size: 1vw;
     vertical-align: middle;
     padding: 0 20px;
+    height:45px;
+    max-height:45px;
+}
+
+td img{
+    height: 45%;
+}
+
+.table-img{
+    display: flex;
+    align-items: center;
 }
 
 tr th:first-child,tr td:first-child{
@@ -205,7 +233,7 @@ tr th:first-child,tr td:first-child{
 }
 tr th:last-child,tr td:last-child{
     border-radius: 0 12px 12px 0;
-    width: 260px;
+    width: 20%;
 }
 
 table tr:nth-child(2n+1){
@@ -221,8 +249,7 @@ table tr:nth-child(2n+1){
 }
 
 .arrow-ico{
-    margin-bottom: 3px;
-    margin-right: 25px;
+    transition: ease-in 0.8s;
 }
 
 .table-ico {

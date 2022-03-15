@@ -1,0 +1,79 @@
+body{
+    font-family:'Roboto', Courier, monospace;
+    color: #404040;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login {
+    /* width: 20%;
+    height: 20%; */
+    background: #E2F1F7;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-family: 'Dancing Script';
+    font-weight: 500;
+    font-size: 4vw;
+    margin-bottom: 10px;
+}
+
+h2{
+    font-size: 36px;
+    font-weight: 600;
+    color: #404040;
+    margin-bottom: 15px;
+}
+
+input{
+    background: white;
+
+    border: solid #E0E0E0 1px;
+    border-radius: 10px;
+
+    color: #404040;
+
+    font-size: 18px;
+    margin: 15px 0;
+    
+}
+
+input::placeholder{
+    color: #E0E0E0;
+}
+
+input[type="text"],input[type="password"]{
+    height: 50px;
+    width: 330px;
+    padding-left: 20px;
+}
+
+input[type="submit"]{
+    color: #404040;
+
+    height: 50px;
+    width: 150px;
+
+    
+}
