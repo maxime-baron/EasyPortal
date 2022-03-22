@@ -17,6 +17,7 @@ body{
 .login {
     /* width: 20%;
     height: 20%; */
+    flex-direction: column;
     background: #E2F1F7;
     border-radius: 20px;
     display: flex;
@@ -35,8 +36,12 @@ form {
 h1{
     font-family: 'Dancing Script';
     font-weight: 500;
-    font-size: 4vw;
-    margin-bottom: 10px;
+    font-size: 64px;
+    /* margin-bottom: 10px; */
+    height: 0px;
+    z-index: 10;
+    position: relative;
+    bottom: 95px;
 }
 
 h2{
@@ -75,5 +80,33 @@ input[type="submit"]{
     height: 50px;
     width: 150px;
 
-    
+}
+
+@media screen and (max-width:500px){
+
+    html{
+        font-size: 10px;
+    }
+
+    h1{
+        display: none;
+    }
+
+    h2{
+        font-size: 3.4rem;
+    }
+
+    .login{
+        padding: 15% 10%;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    input[type="text"],input[type="password"]{
+        height: 50px;
+        width: 100%;
+        padding-left: 20px;
+    }
 }

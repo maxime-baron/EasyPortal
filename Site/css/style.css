@@ -25,6 +25,10 @@ p {
     font-size: 0.85vw;
 }
 
+nav{
+    display: none;
+}
+
 .content {
     display: flex;
     height: 100vh;
@@ -254,8 +258,257 @@ table tr:nth-child(2n+1){
 
 .table-ico {
     cursor: pointer;
+    transition: ease-out 0.8s;
 }
 
 .table-ico:hover{
-    filter: contrast(0.9);
+    filter: contrast(0.85);
+    transition: ease-in 0.2s;
+}
+
+@media screen and (max-width:1024px) and (min-width:500px) {
+
+    html{
+        font-size: 10px;
+    }
+
+    h1{
+        font-weight: 600;
+        font-size: 2rem;
+        padding-left: 2%;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    nav{
+        display: flex;
+        margin: 10px auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav img{
+        margin-right: 3%;
+        cursor: pointer;
+    }
+
+    .title{
+        display: none;
+    }
+
+    .displ{
+        width: 100%;
+    }
+
+    .open-button{
+        width: 300px;
+        max-width: none;
+    }
+
+    .open-button p{
+        font-size: 1.4rem;
+    }
+
+    .user-btn p {
+        font-size: 1.4rem;
+    }
+
+    .left-displ{
+        width: 300px;
+        max-width: none;
+        margin-right: 30px;
+    }
+
+    .left-side{
+        display: none;
+    }
+
+    .stats{
+        width: 100%;
+        max-width: none;
+    }
+
+    .stat-label{
+        font-size: 1.3rem;
+    }
+
+    .stats span{
+        font-size: 2rem;
+    }
+
+    .dashboard{
+        margin: 0 auto;
+        width: 50%;
+        min-width: 500px;
+        max-width: 1024px;
+        padding: 0 20px;
+    }
+
+    .content{
+        width: 100vw;
+        box-sizing: border-box;
+        min-width: 0px;
+        height: auto;
+        padding: 0vh 0vw;
+        flex-direction: column;
+    }
+
+    td,th {
+        font-size: 1.3rem;
+    }
+    
+}
+
+@media screen and (max-width:500px) {
+
+    html{
+        font-size: 10px;
+    }
+
+    .title{
+        display: none;
+    }
+
+    h1{
+        font-weight: 600;
+        font-size: 2rem;
+        padding-left: 2%;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    nav{
+        display: flex;
+        margin: 10px auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav img{
+        margin-right: 3%;
+        cursor: pointer;
+    }
+
+    .left-side{
+        display: none;
+    }
+    .dashboard{
+        margin: 0 auto;
+        width: 100%;
+        padding: 5vw;
+    }
+
+    .content{
+        width: 100vw;
+        box-sizing: border-box;
+        min-width: 0px;
+        height: auto;
+        padding: 0vh 0vw;
+        flex-direction: column;
+    }
+
+    td,th {
+        font-size: 1.4rem;
+        width: 20%;
+        box-sizing:border-box;
+        padding: 0 0 0 3vw;
+    }
+
+    tr th:last-child,tr td:last-child{
+        border-radius: 0 12px 12px 0;
+        box-sizing:border-box;
+        padding: 0 0 0 3vw;
+    }
+
+    .displ{
+        width: 100%;
+    }
+
+    .left-displ{
+        width: 50%;
+        max-width:none;
+    }
+
+    .stats{
+        width: 97%;
+        max-width: none;
+    }
+
+    .stats p{
+        font-size: 1.3rem;
+    }
+
+    .stats span{
+        font-size: 1.6rem;
+    }
+
+    .open-button{
+        width: 50%;
+        max-width:none;
+    }
+
+    .open-button h2{
+        font-size: 2.5rem;
+        display: inline;
+        position: relative;
+        bottom: 8px;
+        padding-left: 3%;
+    }
+
+    .open-label{
+        margin: 10px 0;
+        font-size: 1.6rem;
+    }
+
+    .user-action{
+        display: flex;
+        margin: 20px 0 0 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-btn{
+        width: 100%;
+        height: 100px;
+        min-height: 0px;
+        margin: 20px 0;
+    }
+
+    .user-btn h2{
+        font-size: 2.2rem;
+        display: inline;
+        position: relative;
+        bottom: 8px;
+        padding-left: 3%;
+    }
+
+    .user-btn p{
+        margin: 10px 0;
+        font-size: 1.6rem;
+    }
+    
+    .add-user{
+        margin: 0;
+    }
+
+    .users-list{
+        min-width: none;
+        width: 100%;
+    }
+
+    table, tr{
+        width: 100%;
+    }
 }
