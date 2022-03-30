@@ -19,7 +19,7 @@ if (isset($_POST['pseudo'],$_POST['mdp'],$_POST['prenom'],$_POST['nomDeFamille']
 }
 else {
 
-    $username = 'test';
+    $username = 'testee';
     $password='testmdp';
     $firstName='teste';
     $lastname='TEST';
