@@ -9,10 +9,10 @@ $dbname = "easyportal";
 $bdd = new mysqli($host, $user, $password, $dbname, $port, $socket)
 or die ('Could not connect to the database server' . mysqli_connect_error());
 
-if (isset($_POST['plaque'],$_POST['proprio']))
+if (isset($_GET['plaque'],$_GET['proprio']))
 {
-    $plateNumber=$_POST['plaque'];
-    $owner=$_POST['proprio'];
+    $plateNumber=$_GET['plaque'];
+    $owner=$_GET['proprio'];
 }
 else
 {
