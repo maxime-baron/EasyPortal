@@ -1,0 +1,22 @@
+IR Sensor (capteur infrarouge) : 
+
+OUT : 32
+GND : GND
+VCC : +5V
+
+Endstop (droite) :
+
+Yellow : +5V
+Blue : 27
+Red : GND
+
+Endstop (gauche) :
+
+Yellow : GND
+Blue : 26
+Red : +5V
+
+LED :
+
+Vert : 35
+Rouge : 37
