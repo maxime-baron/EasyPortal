@@ -14,7 +14,7 @@
     <div class="content">
         <div class="login">
             <h1>EasyPortal</h1>
-            <form action="" method="post">
+            <form class="form">
                 <h2>LOGIN</h2>
                 <input type="text" name="Username" class="log-user" placeholder="Username">
                 <input type="password" name="Password" class="log-pswd" placeholder="Password">
@@ -22,6 +22,7 @@
             </form>
         </div>
     </div>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 
-body{
-    font-family:'Roboto', Courier, monospace;
+body {
+    font-family: 'Roboto', Courier, monospace;
     color: #404040;
     font-weight: 400;
     font-size: 14px;
 }
 
-h1{
+h1 {
     font-family: 'Dancing Script';
     font-weight: 500;
     font-size: 4vw;
 }
 
-h2{
+h2 {
     font-weight: 800;
     font-size: 24px;
     margin: 4px 0px;
@@ -25,7 +25,7 @@ p {
     font-size: 0.85vw;
 }
 
-nav{
+nav {
     display: none;
 }
 
@@ -46,13 +46,13 @@ nav{
     align-items: center;
 }
 
-.camera-render{
+.camera-render {
     background-color: green;
     width: 90%;
     height: 50%;
 }
 
-.logs{
+.logs {
     background-color: red;
     width: 90%;
     height: 50%;
@@ -101,11 +101,11 @@ nav{
     justify-content: space-around;
 }
 
-.stat-label{
+.stat-label {
     margin-left: 5%;
 }
 
-.stats span{
+.stats span {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -120,7 +120,7 @@ nav{
     align-items: center;
 }
 
-.stats p{
+.stats p {
     width: 100%;
     font-weight: 500;
 }
@@ -131,7 +131,7 @@ nav{
     margin: 0 0 8px 0;
 }
 
-.week-stats span{
+.week-stats span {
     background-image: url(../imgs/svg/week-form.svg);
     background-repeat: no-repeat;
 }
@@ -141,7 +141,7 @@ nav{
     border-radius: 12px;
 }
 
-.day-stats span{
+.day-stats span {
     background-image: url(../imgs/svg/day-form.svg);
     background-repeat: no-repeat;
 }
@@ -158,7 +158,7 @@ nav{
     cursor: pointer;
 }
 
-.open-button:hover{
+.open-button:hover {
     background: #e2c9fc;
     transition: ease-in 0.2s;
 }
@@ -168,7 +168,7 @@ nav{
     margin: 30px 0;
 }
 
-.user-btn{
+.user-btn {
     width: 300px;
     min-height: 125px;
     height: auto;
@@ -182,7 +182,7 @@ nav{
     background-color: #FFE6E6;
 }
 
-.del-user:hover{
+.del-user:hover {
     background-color: #ffd9d9;
     transition: ease-in 0.2s;
 }
@@ -192,7 +192,7 @@ nav{
     margin-right: 30px;
 }
 
-.add-user:hover{
+.add-user:hover {
     background-color: #dce1ff;
     transition: ease-in 0.2s;
 }
@@ -201,12 +201,12 @@ nav{
     width: 100%;
 }
 
-tr{
+tr {
     height: 45px;
     border-radius: 14px;
 }
 
-th{
+th {
     width: 140px;
     font-weight: 600;
     font-size: 1vw;
@@ -214,45 +214,48 @@ th{
     padding: 0 20px;
 }
 
-td{
+td {
     font-weight: 300;
     font-size: 1vw;
     vertical-align: middle;
     padding: 0 20px;
-    height:45px;
-    max-height:45px;
+    height: 45px;
+    max-height: 45px;
 }
 
-td img{
+td img {
     height: 45%;
 }
 
-.table-img{
+.table-img {
     display: flex;
     align-items: center;
 }
 
-tr th:first-child,tr td:first-child{
+tr th:first-child,
+tr td:first-child {
     border-radius: 12px 0 0 12px;
 }
-tr th:last-child,tr td:last-child{
+
+tr th:last-child,
+tr td:last-child {
     border-radius: 0 12px 12px 0;
     width: 20%;
 }
 
-table tr:nth-child(2n+1){
+table tr:nth-child(2n+1) {
     background: rgba(139, 198, 223, 0.25);
 }
 
-.nClick{
+.nClick {
     transform: rotateZ(0deg)
 }
 
-.clicked{
+.clicked {
     transform: rotateZ(180deg)
 }
 
-.arrow-ico{
+.arrow-ico {
     transition: ease-in 0.8s;
 }
 
@@ -261,57 +264,57 @@ table tr:nth-child(2n+1){
     transition: ease-out 0.8s;
 }
 
-.table-ico:hover{
+.table-ico:hover {
     filter: contrast(0.85);
     transition: ease-in 0.2s;
 }
 
 @media screen and (max-width:1024px) and (min-width:500px) {
 
-    html{
+    html {
         font-size: 10px;
     }
 
-    h1{
+    h1 {
         font-weight: 600;
         font-size: 2rem;
         padding-left: 2%;
     }
 
-    h2{
+    h2 {
         font-size: 2rem;
     }
 
-    p{
+    p {
         font-size: 1rem;
     }
 
-    nav{
+    nav {
         display: flex;
         margin: 10px auto;
         align-items: center;
         justify-content: space-between;
     }
 
-    nav img{
+    nav img {
         margin-right: 3%;
         cursor: pointer;
     }
 
-    .title{
+    .title {
         display: none;
     }
 
-    .displ{
+    .displ {
         width: 100%;
     }
 
-    .open-button{
+    .open-button {
         width: 300px;
         max-width: none;
     }
 
-    .open-button p{
+    .open-button p {
         font-size: 1.4rem;
     }
 
@@ -319,30 +322,30 @@ table tr:nth-child(2n+1){
         font-size: 1.4rem;
     }
 
-    .left-displ{
+    .left-displ {
         width: 300px;
         max-width: none;
         margin-right: 30px;
     }
 
-    .left-side{
+    .left-side {
         display: none;
     }
 
-    .stats{
+    .stats {
         width: 100%;
         max-width: none;
     }
 
-    .stat-label{
+    .stat-label {
         font-size: 1.3rem;
     }
 
-    .stats span{
+    .stats span {
         font-size: 2rem;
     }
 
-    .dashboard{
+    .dashboard {
         margin: 0 auto;
         width: 50%;
         min-width: 500px;
@@ -350,7 +353,7 @@ table tr:nth-child(2n+1){
         padding: 0 20px;
     }
 
-    .content{
+    .content {
         width: 100vw;
         box-sizing: border-box;
         min-width: 0px;
@@ -359,58 +362,60 @@ table tr:nth-child(2n+1){
         flex-direction: column;
     }
 
-    td,th {
+    td,
+    th {
         font-size: 1.3rem;
     }
-    
+
 }
 
 @media screen and (max-width:500px) {
 
-    html{
+    html {
         font-size: 10px;
     }
 
-    .title{
+    .title {
         display: none;
     }
 
-    h1{
+    h1 {
         font-weight: 600;
         font-size: 2rem;
         padding-left: 2%;
     }
 
-    h2{
+    h2 {
         font-size: 2rem;
     }
 
-    p{
+    p {
         font-size: 1rem;
     }
 
-    nav{
+    nav {
         display: flex;
         margin: 10px auto;
         align-items: center;
         justify-content: space-between;
     }
 
-    nav img{
+    nav img {
         margin-right: 3%;
         cursor: pointer;
     }
 
-    .left-side{
+    .left-side {
         display: none;
     }
-    .dashboard{
+
+    .dashboard {
         margin: 0 auto;
         width: 100%;
         padding: 5vw;
     }
 
-    .content{
+    .content {
         width: 100vw;
         box-sizing: border-box;
         min-width: 0px;
@@ -419,47 +424,49 @@ table tr:nth-child(2n+1){
         flex-direction: column;
     }
 
-    td,th {
+    td,
+    th {
         font-size: 1.4rem;
         width: 20%;
-        box-sizing:border-box;
+        box-sizing: border-box;
         padding: 0 0 0 3vw;
     }
 
-    tr th:last-child,tr td:last-child{
+    tr th:last-child,
+    tr td:last-child {
         border-radius: 0 12px 12px 0;
-        box-sizing:border-box;
+        box-sizing: border-box;
         padding: 0 0 0 3vw;
     }
 
-    .displ{
+    .displ {
         width: 100%;
     }
 
-    .left-displ{
+    .left-displ {
         width: 50%;
-        max-width:none;
+        max-width: none;
     }
 
-    .stats{
+    .stats {
         width: 97%;
         max-width: none;
     }
 
-    .stats p{
+    .stats p {
         font-size: 1.3rem;
     }
 
-    .stats span{
+    .stats span {
         font-size: 1.6rem;
     }
 
-    .open-button{
+    .open-button {
         width: 50%;
-        max-width:none;
+        max-width: none;
     }
 
-    .open-button h2{
+    .open-button h2 {
         font-size: 2.5rem;
         display: inline;
         position: relative;
@@ -467,26 +474,26 @@ table tr:nth-child(2n+1){
         padding-left: 3%;
     }
 
-    .open-label{
+    .open-label {
         margin: 10px 0;
         font-size: 1.6rem;
     }
 
-    .user-action{
+    .user-action {
         display: flex;
         margin: 20px 0 0 0;
         flex-direction: column;
         align-items: center;
     }
 
-    .user-btn{
+    .user-btn {
         width: 100%;
         height: 100px;
         min-height: none;
         margin: 20px 0;
     }
 
-    .user-btn h2{
+    .user-btn h2 {
         font-size: 2.2rem;
         display: inline;
         position: relative;
@@ -494,21 +501,22 @@ table tr:nth-child(2n+1){
         padding-left: 3%;
     }
 
-    .user-btn p{
+    .user-btn p {
         margin: 10px 0;
         font-size: 1.6rem;
     }
-    
-    .add-user{
+
+    .add-user {
         margin: 0;
     }
 
-    .users-list{
+    .users-list {
         min-width: none;
         width: 100%;
     }
 
-    table, tr{
+    table,
+    tr {
         width: 100%;
     }
 }

@@ -1,0 +1,91 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  /* border: 1px solid #49f300; */
+  border-radius: 4px;
+  z-index: 10;
+  background-color: #E2F1F7;
+  width: fit-content;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header-title {
+  padding: 10px 0;
+}
+
+.modal-body {
+  width: fit-content;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-film-info {
+  padding: 10px 15px;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.712);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.addUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.addUser input {
+  background: white;
+
+  border: solid #E0E0E0 1px;
+  border-radius: 10px;
+
+  color: #404040;
+
+  font-size: 18px;
+  margin: 15px 0;
+
+}
+
+.addUser input::placeholder {
+  color: #E0E0E0;
+}
+
+.addUser input[type="text"],
+input[type="password"] {
+  height: 50px;
+  width: 330px;
+  padding-left: 20px;
+}
+
+.addUser input[type="submit"] {
+  color: #404040;
+
+  height: 50px;
+  width: 150px;
+
+}

@@ -1,11 +1,11 @@
-body{
-    font-family:'Roboto', Courier, monospace;
+body {
+    font-family: 'Roboto', Courier, monospace;
     color: #404040;
     font-weight: 400;
     font-size: 14px;
 }
 
-.content{
+.content {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -33,7 +33,7 @@ form {
     justify-content: center;
 }
 
-h1{
+h1 {
     font-family: 'Dancing Script';
     font-weight: 500;
     font-size: 64px;
@@ -44,14 +44,14 @@ h1{
     bottom: 95px;
 }
 
-h2{
+h2 {
     font-size: 36px;
     font-weight: 600;
     color: #404040;
     margin-bottom: 15px;
 }
 
-input{
+input {
     background: white;
 
     border: solid #E0E0E0 1px;
@@ -61,20 +61,21 @@ input{
 
     font-size: 18px;
     margin: 15px 0;
-    
+
 }
 
-input::placeholder{
+input::placeholder {
     color: #E0E0E0;
 }
 
-input[type="text"],input[type="password"]{
+input[type="text"],
+input[type="password"] {
     height: 50px;
     width: 330px;
     padding-left: 20px;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     color: #404040;
 
     height: 50px;
@@ -82,21 +83,21 @@ input[type="submit"]{
 
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:500px) {
 
-    html{
+    html {
         font-size: 10px;
     }
 
-    h1{
+    h1 {
         display: none;
     }
 
-    h2{
+    h2 {
         font-size: 3.4rem;
     }
 
-    .login{
+    .login {
         padding: 15% 10%;
         display: block;
         width: 100%;
@@ -104,7 +105,8 @@ input[type="submit"]{
         border-radius: 0px;
     }
 
-    input[type="text"],input[type="password"]{
+    input[type="text"],
+    input[type="password"] {
         height: 50px;
         width: 100%;
         padding-left: 20px;
