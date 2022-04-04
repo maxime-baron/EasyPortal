@@ -116,7 +116,6 @@
 
     <div class="modal" id="modal">
         <div class="modal-body">
-
         </div>
     </div>
     <div id="overlay"></div>

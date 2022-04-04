@@ -16,7 +16,7 @@ addUser.addEventListener("click", () => {
 
 addCSV.addEventListener("click", () => {
     console.log("Ajout via CSV")
-    modalBody.innerHTML = ''
+    modalBody.innerHTML = '<h2 class="modal-header-title">Ajouter via fichier CSV</h2><input type="file" name="csv" id="csv-intp" accept=".csv"><input type="submit" value="Ajouter">';
     openModal(modal)
 })
 

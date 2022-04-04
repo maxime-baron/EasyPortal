@@ -58,7 +58,9 @@
   padding-top: 10px;
 }
 
-.addUser input {
+input[type="text"],
+input[type="submit"],
+input[type="password"] {
   background: white;
 
   border: solid #E0E0E0 1px;
@@ -82,10 +84,18 @@ input[type="password"] {
   padding-left: 20px;
 }
 
-.addUser input[type="submit"] {
-  color: #404040;
-
+input[type="submit"] {
   height: 50px;
-  width: 150px;
+  width: 130px;
+  cursor: pointer;
+}
 
+::-webkit-file-upload-button {
+  background-color: #fff;
+  color: #404040;
+  border: solid #E0E0E0 1px;
+  border-radius: 10px;
+  height: 50px;
+  padding: 2%;
+  cursor: pointer;
 }

@@ -178,12 +178,12 @@ nav {
     transition: ease-out 0.8s;
 }
 
-.del-user {
-    background-color: #FFE6E6;
+.csv-user {
+    background-color: #DAFFD9;
 }
 
-.del-user:hover {
-    background-color: #ffd9d9;
+.csv-user:hover {
+    background-color: #bbffb9;
     transition: ease-in 0.2s;
 }
 
