@@ -22,7 +22,7 @@
             </form>
         </div>
     </div>
-    <script src="js/login.js"></script>
+    <script src="script/login.js"></script>
 </body>
 
 </html>

@@ -15,7 +15,7 @@
         <h1>EasyPortal</h1>
         <div class="open-button">
             <div class="open-header">
-                <img src="imgs/svg/door-icon.svg" alt="">
+                <img src="images/svg/door-icon.svg" alt="">
                 <h2 class="open">Ouvrir</h2>
             </div>
             <p class="open-label">Préssé pour simplement ouvrir</p>
@@ -29,7 +29,7 @@
                 $username = 'djboss';
 
                 curl_setopt_array($curl, array(
-                    CURLOPT_URL => '%7B%7Bmock%7D%7D/utilisateur?username=' . $username,
+                    CURLOPT_URL => '0d5987d2-70b7-4a7d-a8bd-6ee8c8d649dc.mock.pstmn.io/utilisateur?username=' . $username,
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_ENCODING => '',
                     CURLOPT_MAXREDIRS => 10,
