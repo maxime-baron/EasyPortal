@@ -9,21 +9,24 @@ $dbname="easyportal";
 $bdd = new mysqli($host, $user, $password, $dbname, $port, $socket)
 or die ('Could not connect to the database server' . mysqli_connect_error());
 
-$query = "SELECT username FROM easyportal.users";
+$query = "SELECT owner=\"test\" FROM easyportal.plates";
+
 
 if ($stmt = $bdd->prepare($query)) {
     $stmt->execute();
-    $stmt->bind_result($username,$perm);
-    $json=array();
-
-    while ($stmt->fetch()) {
-        $tab=array("username"=>$username,"perm"=>$perm);
-        array_push($json,$tab);
+    $stmt->bind_result($owner);
+    while ($stmt->fetch());
 
 
+
+}
+else {
+        $rep = array("success" => false);
+        $rep += array("message" => "Parametre manquant");
+        echo(json_encode($rep));
     }
-
-    echo(json_encode($json));
-    $stmt->close();
+{
+        $stmt->close();
+}
 }
 ?>
