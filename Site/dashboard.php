@@ -119,7 +119,8 @@
         </div>
     </div>
     <div id="overlay"></div>
-    <script src="script/dashboard.js"></script>
+    <script src="scripts/lib/papaparse.min.js"></script>
+    <script src="scripts/js/dashboard.js"></script>
 </body>
 
 </html>

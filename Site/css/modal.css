@@ -99,3 +99,13 @@ input[type="submit"] {
   padding: 2%;
   cursor: pointer;
 }
+
+.formError{
+  display: none;
+  color: red;
+  font-size: x-small;
+}
+
+.err{
+  display: block;
+}
