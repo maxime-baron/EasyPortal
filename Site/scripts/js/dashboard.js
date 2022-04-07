@@ -46,16 +46,44 @@ addUser.addEventListener("click", () => {
 
 addCSV.addEventListener("click", () => {
     console.log("Ajout via CSV")
-    modalBody.innerHTML = '<h2 class="modal-header-title">Ajouter via fichier CSV</h2><form action="" method="" class="addUserCSV"><input type="file" name="csv" id="inputAddCSV" accept=".csv"><input type="submit" value="Ajouter"></form>';
+    modalBody.innerHTML = '<h2 class="modal-header-title">Ajouter via fichier CSV</h2><form action="" method="" class="addUserCSV"><input type="file" name="csv" id="inputAddCSV" accept=".csv"><span class="formError">Erreur</span><input type="submit" value="Ajouter"></form>';
     /* CONSTANTE DU FORMULAIRE*/
     const formAddCSV = document.querySelector('.addUserCSV')
     const inputAddCSV = document.querySelector('#inputAddCSV');
-    formAddCSV.addEventListener('submit', (e) => {
+    formAddCSV.addEventListener('submit', async (e) => {
         e.preventDefault()
         console.log(inputAddCSV.value)
         Papa.parse(inputAddCSV.files[0], {
-            complete: function (results) {
-                console.log(results.data);
+            complete: async function (results) {
+                let done = 0;
+                for (element of results.data) {
+                    let addCSVUser = element[0]
+                    let addCSVFirstName = element[1]
+                    let addCSVLastName = element[2]
+                    let addCSVPerm = element[3]
+
+                    let response = await fetch('https://0d5987d2-70b7-4a7d-a8bd-6ee8c8d649dc.mock.pstmn.io/ajouterUtilisateur?username=' + addCSVUser + '&firtName=' + addCSVFirstName + '&lastName=' + addCSVLastName + '&perm=' + addCSVPerm)
+                    let data = await response.json()
+                    console.log(data)
+                    if (data.success == true) {
+                        done++
+                    }
+
+                    if (done == results.data.length) {
+                        document.querySelector(".formError").classList.remove("err")
+                        modal.style.background = "white"
+                        window.setTimeout(() => {
+                            modalBody.innerHTML = '<img src="https://c.tenor.com/Hw7f-4l0zgEAAAAC/check-green.gif" alt="Checked">';
+                            window.setTimeout(() => {
+                                modalBody.innerHTML = '';
+                                modal.style.background = "#E2F1F7"
+                                closeModal(modal)
+                                modal.classList.remove("access")
+                            }, 1700)
+                        }, 200)
+                    }
+                };
+
             }
         });
     })
