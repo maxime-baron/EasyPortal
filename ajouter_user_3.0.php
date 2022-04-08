@@ -20,4 +20,4 @@ if (isset($_GET['plaque'],$_GET['username']))
     $rep = array("success" => false);
     $rep += array("message" => "Parametre manquant");
     echo(json_encode($rep));
-}
+}?>
