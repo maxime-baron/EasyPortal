@@ -1,7 +1,8 @@
 <?php
 
 require "bdd.php";
-$bdd = pdo();
+
+
 
 if (isset($_GET['plaque'],$_GET['proprietaire']))
 {
@@ -20,4 +21,4 @@ if (isset($_GET['plaque'],$_GET['proprietaire']))
     $rep = array("success" => false);
     $rep += array("message" => "Parametre manquant");
     echo(json_encode($rep));
-}
+}?>
