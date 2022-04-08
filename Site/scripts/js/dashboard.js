@@ -115,8 +115,10 @@ extendArrows.forEach((extendArrow) => {
         console.log("extend")
         if (extendArrow.classList.contains("nClick")) {
             extendArrow.classList.replace("nClick", "click")
+            extendArrow.parentElement.parentElement.parentElement.nextElementSibling.classList.remove("hide")
         } else {
             extendArrow.classList.replace("click", "nClick")
+            extendArrow.parentElement.parentElement.parentElement.nextElementSibling.classList.add("hide")
         }
     })
 })

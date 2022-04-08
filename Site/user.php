@@ -52,8 +52,8 @@
                     <td class="plate-number">AA-123-BB</td>
                     <td>
                         <div class="table-img">
-                            <img class="edit-ico table-ico" src="imgs/svg/edit-ico.svg" alt="Boutton modifier">
-                            <img class="trash-ico table-ico" src="imgs/svg/trash-ico.svg" alt="Boutton supprimer">
+                            <img class="edit-ico table-ico" src="images/svg/edit-ico.svg" alt="Boutton modifier">
+                            <img class="trash-ico table-ico" src="images/svg/trash-ico.svg" alt="Boutton supprimer">
                         </div>
                     </td>
                 </tr>
