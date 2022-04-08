@@ -207,7 +207,7 @@ nav {
     width: 100%;
 }
 
-table{
+table {
     width: 100%;
 }
 
@@ -272,6 +272,30 @@ tr:nth-child(2n+1) {
 .table-ico:hover {
     filter: contrast(0.85);
     transition: ease-in 0.2s;
+}
+
+.extended {
+    transform-origin: top;
+    transform: scaleY(1);
+    transition: cubic-bezier(0.32, 0.56, 0.51, 0.99) 500ms;
+}
+
+.extended.hide {
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: cubic-bezier(0.32, 0.56, 0.51, 0.99) 500ms;
+}
+
+.click {
+    transform-origin: 50% 50%;
+    transform: rotateZ(180deg);
+    transition: ease-in 0.4s;
+}
+
+.nClick {
+    transform-origin: 50% 50%;
+    transform: rotateZ(-180deg);
+    transition: ease-in 0.4s;
 }
 
 @media screen and (max-width:1024px) and (min-width:500px) {

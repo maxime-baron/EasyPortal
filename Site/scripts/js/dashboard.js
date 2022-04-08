@@ -108,3 +108,15 @@ function closeModal(modal) {
     modal.classList.remove('active')
     overlay.classList.remove('active')
 }
+
+const extendArrows = document.querySelectorAll('.nClick')
+extendArrows.forEach((extendArrow) => {
+    extendArrow.addEventListener('click', () => {
+        console.log("extend")
+        if (extendArrow.classList.contains("nClick")) {
+            extendArrow.classList.replace("nClick", "click")
+        } else {
+            extendArrow.classList.replace("click", "nClick")
+        }
+    })
+})
