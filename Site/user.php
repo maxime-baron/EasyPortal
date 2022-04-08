@@ -45,8 +45,6 @@
                 $response = curl_exec($curl);
 
                 curl_close($curl);
-                echo test;
-
                 ?>
                 <tr>
                     <td class="plate-number">AA-123-BB</td>
