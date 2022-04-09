@@ -172,10 +172,11 @@ nav {
 .user-action {
     display: flex;
     margin: 30px 0;
+    justify-content: space-between;
 }
 
 .user-btn {
-    width: 300px;
+    width: 47%;
     min-height: 125px;
     height: auto;
     border-radius: 12px;
