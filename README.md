@@ -1,6 +1,6 @@
 # EasyPortal
  
-Toutes les différentes étapes de l'application sont sur google drive et su rmon gtihub perso.
+Toutes les différentes étapes de l'application sont sur google drive et sur mon gtihub perso.
 
 Voici les liens:
 
