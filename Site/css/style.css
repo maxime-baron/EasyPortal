@@ -321,13 +321,7 @@ nav {
 }
 
 .menu{
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 30vw;
-    height: 100vh;
-    background: black;
-    opacity: 0.90;
+   display: none;
 }
 
 @media screen and (max-width:1024px) and (min-width:500px) {
@@ -427,6 +421,44 @@ nav {
     .cell-e {
         font-size: 1.5rem;
     }
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 30vw;
+        height: 100vh;
+        background: black;
+        opacity: 0.90;
+    }
+
+    .sub-menu{
+        width: 100%;
+        padding: 1% 10%;
+        color: white;
+    }
+
+    .menu-header{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .menu-header img{
+        width: fit-content;
+        margin: 5%;
+    }
+
+    .menu-header hr{
+        width: 100%;
+    }
+
+    .menu-body h2{
+        margin: 10px 0;
+    }
+
 }
 
 @media screen and (max-width:500px) {
