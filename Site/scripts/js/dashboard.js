@@ -129,3 +129,28 @@ extendArrows.forEach((extendArrow) => {
 //         console.log(editIcon.parentElement.parentElement.previousElementSibling.textContent)
 //     })
 // })
+/* MENU RESPONSIVE*/
+const menuOpen = document.querySelector(".menu-open")
+const menuClose = document.querySelector(".menu-close")
+const menu = document.querySelector(".menu")
+
+window.onload = () => {
+    menu.style.transform = "translate(" + menu.clientWidth + "px)"
+}
+
+window.onresize = () => {
+    menu.style.transform = "translate(" + menu.clientWidth + "px)"
+}
+
+menuOpen.addEventListener("click", () => {
+    menu.style.transform = "translate(0px)"
+    menuClose.style.transformOrigin = "50% 50%"
+    menuClose.style.transform = "rotateZ(720deg)"
+})
+
+menuClose.addEventListener("click", () => {
+    console.log(menu.clientWidth)
+    menu.style.transform = "translate(" + menu.clientWidth + "px)"
+    menuClose.style.transformOrigin = "50% 50%"
+    menuClose.style.transform = "rotateZ(-720deg)"
+})

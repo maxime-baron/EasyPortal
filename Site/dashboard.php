@@ -20,7 +20,7 @@
         <div class="dashboard">
             <nav>
                 <h1>EasyPortal</h1>
-                <img src="images/svg/menu-icon.svg" alt="">
+                <img src="images/svg/menu-icon.svg" class="menu-open" alt="Open menu">
             </nav>
             <div class="top-view">
                 <div class="title">
@@ -127,6 +127,16 @@
         </div>
     </div>
     <div id="overlay"></div>
+    <div class="menu" id="menu">
+        <div class="sub-menu menu-header">
+            <img src="images/svg/cross.svg" alt="Close cross" class="menu-close">
+            <hr>
+        </div>
+        <div class="sub-menu menu-body">
+            <h2>LOGS</h2>
+            <h2>CAMERA</h2>
+        </div>
+    </div>
     <script src="scripts/lib/papaparse.min.js"></script>
     <script src="scripts/js/dashboard.js"></script>
 </body>

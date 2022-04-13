@@ -425,13 +425,14 @@ nav {
     .menu{
         display: flex;
         flex-direction: column;
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
         width: 30vw;
         height: 100vh;
         background: black;
         opacity: 0.90;
+        transition: all 1s ease;
     }
 
     .sub-menu{
@@ -446,9 +447,10 @@ nav {
         align-items: flex-end;
     }
 
-    .menu-header img{
+    .menu-header .menu-close{
         width: fit-content;
         margin: 5%;
+        transition: all 1s ease;
     }
 
     .menu-header hr{
