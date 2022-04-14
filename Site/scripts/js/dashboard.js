@@ -122,13 +122,7 @@ extendArrows.forEach((extendArrow) => {
         }
     })
 })
-/* ICONE MODIFICATION*/
-// const editIcones = document.querySelectorAll(".edit-ico")
-// editIcones.forEach((editIcon) => {
-//     editIcon.addEventListener('click', () => {
-//         console.log(editIcon.parentElement.parentElement.previousElementSibling.textContent)
-//     })
-// })
+
 /* MENU RESPONSIVE*/
 const menuOpen = document.querySelector(".menu-open")
 const menuClose = document.querySelector(".menu-close")

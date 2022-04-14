@@ -59,6 +59,7 @@
             <div class="plate-add">AJOUTER UNE PLAQUE</div>
         </div>
     </div>
+    <script src="scripts/js/editTable.js"></script>
 </body>
 
 </html>
