@@ -59,7 +59,29 @@
             <div class="plate-add">AJOUTER UNE PLAQUE</div>
         </div>
     </div>
-    <script src="scripts/js/editTable.js"></script>
+    <script>
+        /* ICONE MODIFICATION*/
+        const editIcones = document.querySelectorAll(".edit-ico")
+        editIcones.forEach((editIcon) => {
+            editIcon.addEventListener('click', () => {
+                var editRow = editIcon.parentElement.parentElement.parentElement
+                let previousText = editIcon.parentElement.parentElement.previousElementSibling.textContent
+                editIcon.parentElement.parentElement.parentElement.innerHTML = '<td class="plate-number"><input type="text" name="Plate" class="edit-plate" placeholder="' + previousText + '" value="' + previousText + '"></td><td><div class="table-img"><img class="check-ico table-ico" src="images/svg/check-icon.svg" alt="Boutton modifier"></div></td>'
+                document.querySelector(".edit-plate").focus()
+
+                document.querySelector(".check-ico").addEventListener('click', async () => {
+                    let response = await fetch('https://56b8d581-5d36-4015-9a80-a6276891b681.mock.pstmn.io/modifierPlaque?owner=' + <?= $_SESSION['username'] ?> + '&lastPlateNumber=' + previousText + '&platenumber=' + document.querySelector(".edit-plate"))
+                    let data = await response.json()
+                    console.log(data)
+                    if (data.success == true) {
+                        var newPlate = data.result.plate.plateNumber;
+                    }
+                    document.querySelector(".check-ico").parentElement.parentElement.parentElement.innerHTML = editRow.innerHTML
+                    editRow.matches("plate-number") = newPlate
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>
