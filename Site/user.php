@@ -65,6 +65,7 @@
         editIcones.forEach((editIcon) => {
             editIcon.addEventListener('click', () => {
                 var editRow = editIcon.parentElement.parentElement.parentElement
+                var editRowContent = editIcon.parentElement.parentElement.parentElement.innerHTML
                 let previousText = editIcon.parentElement.parentElement.previousElementSibling.textContent
                 editIcon.parentElement.parentElement.parentElement.innerHTML = '<td class="plate-number"><input type="text" name="Plate" class="edit-plate" placeholder="' + previousText + '" value="' + previousText + '"></td><td><div class="table-img"><img class="check-ico table-ico" src="images/svg/check-icon.svg" alt="Boutton modifier"></div></td>'
                 document.querySelector(".edit-plate").focus()
@@ -76,8 +77,8 @@
                     if (data.success == true) {
                         var newPlate = data.result.plate.plateNumber;
                     }
-                    document.querySelector(".check-ico").parentElement.parentElement.parentElement.innerHTML = editRow.innerHTML
-                    editRow.matches("plate-number") = newPlate
+                    document.querySelector(".check-ico").parentElement.parentElement.parentElement.innerHTML = editRowContent
+                    editRow.firstChild.nextElementSibling.childNodes[0].data = newPlate
                 })
             })
         })
