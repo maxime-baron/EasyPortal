@@ -40,7 +40,7 @@
                     <div class="open-button">
                         <img src="images/svg/door-icon.svg" alt="Icone d'ouverture de porte">
                         <h2 class="open">Ouvrir</h2>
-                        <p class="open-label">Préssé pour simplement ouvrir</p>
+                        <p class="open-label">Préssé pour ouvrir</p>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                     <?php
 
                     $curl = curl_init();
-                    $url = 'http://0d5987d2-70b7-4a7d-a8bd-6ee8c8d649dc.mock.pstmn.io/utilisateurs';
+                    $url = 'http://51.210.151.13/btssnir/projets2022/easyportal/api/utilisateurs.php';
 
                     curl_setopt($curl, CURLOPT_URL, $url);
                     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -82,6 +82,7 @@
                     } else {
                         $json = json_decode($response, true);
                         foreach ($json['result'] as $key => $value) {
+                            // var_dump($json['result']);
                             echo '<div class="tr nex table-row">';
                             echo '<div class = "cell">' . $json['result'][$key]['username'] . '</div>';
                             echo '<div class = "cell">' . $json['result'][$key]['firstname'] . '</div>';

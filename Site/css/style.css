@@ -28,7 +28,7 @@ h2 {
 
 p {
     font-weight: 400;
-    font-size: 0.85vw;
+    font-size: 1em;
 }
 
 nav {
@@ -129,6 +129,7 @@ nav {
 .stats p {
     width: 100%;
     font-weight: 500;
+    font-size: 0.8em;
 }
 
 .week-stats {
@@ -320,8 +321,8 @@ nav {
     transition: ease-in 0.8s;
 }
 
-.menu{
-   display: none;
+.menu {
+    display: none;
 }
 
 @media screen and (max-width:1024px) and (min-width:500px) {
@@ -422,7 +423,7 @@ nav {
         font-size: 1.5rem;
     }
 
-    .menu{
+    .menu {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -435,29 +436,29 @@ nav {
         transition: all 1s ease;
     }
 
-    .sub-menu{
+    .sub-menu {
         width: 100%;
         padding: 1% 10%;
         color: white;
     }
 
-    .menu-header{
+    .menu-header {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
     }
 
-    .menu-header .menu-close{
+    .menu-header .menu-close {
         width: fit-content;
         margin: 5%;
         transition: all 1s ease;
     }
 
-    .menu-header hr{
+    .menu-header hr {
         width: 100%;
     }
 
-    .menu-body h2{
+    .menu-body h2 {
         margin: 10px 0;
     }
 

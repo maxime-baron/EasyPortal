@@ -117,6 +117,87 @@ table tr:nth-child(2n+1) {
     background: rgba(139, 198, 223, 0.25);
 }
 
+/* ----------------------------------- */
+
+.table {
+    width: 100%;
+}
+
+.tr {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 45px;
+    font-size: 1em;
+    width: 100%;
+    border-radius: 14px;
+}
+
+.tr .cell {
+    /* width: 19%; */
+    padding: 0 3%;
+    box-sizing: border-box;
+}
+
+.tr .cell-e {
+    width: 50%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.tr .cell-e:last-child {
+    width: 20%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.table-header .cell {
+    font-weight: 600;
+}
+
+.table-header .cell-e {
+    font-weight: 600;
+}
+
+.table-row .cell {
+    font-weight: 300;
+}
+
+.table-row .cell-e {
+    font-weight: 300;
+}
+
+.table-row .cell img {
+    height: 45%;
+}
+
+.table-img {
+    display: flex;
+    align-items: center;
+}
+
+.table-header.cell:first-child,
+.table-row.cell:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.table-header.cell:last-child,
+.table-row.cell:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.nex:nth-of-type(2n+1) {
+    background: rgba(139, 198, 223, 0.25);
+}
+
+.ex:nth-of-type(2n+1) {
+    background: rgba(139, 198, 223, 0.25);
+}
+
+/* ----------------------------------- */
+
 .table-img {
     display: flex;
     align-items: center;

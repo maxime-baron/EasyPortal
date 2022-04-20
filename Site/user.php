@@ -22,40 +22,42 @@
         </div>
         <div class="plate-list">
             <h2>MES PLAQUES </h2>
-            <table>
+            <div class="table">
                 <?php
 
-                $curl = curl_init();
                 $username = 'djboss';
 
-                curl_setopt_array($curl, array(
-                    CURLOPT_URL => '0d5987d2-70b7-4a7d-a8bd-6ee8c8d649dc.mock.pstmn.io/utilisateur?username=' . $username,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => '',
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => 'GET',
-                    CURLOPT_HTTPHEADER => array(
-                        'Accept: application/json'
-                    ),
-                ));
+                $curl = curl_init();
+                $url = 'http://51.210.151.13/btssnir/projets2022/easyportal/api/utilisateur.php?username=' . $username;
+
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                 $response = curl_exec($curl);
+                if ($e = curl_error($curl)) {
+                    echo $e;
+                } else {
+                    $json = json_decode($response, true);
+                    foreach ($json['result'] as $key => $value) {
+                        foreach ($json['result'][$key]['plates'] as $key2 => $val) {
+                            echo '<div class="tr nex table-row">';
+                            echo '<div class = "plate-number cell">' . $val['plateNumber'] . '</div>';
+                            echo '<div class = "cell">21/06/2022 10h34</div>';
+                            echo '<div class = "cell">
+                                    <div class="table-img">
+                                        <img class="edit-ico table-ico" src="images/svg/edit-ico.svg" alt="Boutton modifier">
+                                        <img class="trash-ico table-ico" src="images/svg/trash-ico.svg" alt="Boutton supprimer">
+                                    </div>
+                                </div>
+                            </div>';
+                        }
+                        echo '</div>';
+                    }
+                }
 
                 curl_close($curl);
                 ?>
-                <tr>
-                    <td class="plate-number">AA-123-BB</td>
-                    <td>
-                        <div class="table-img">
-                            <img class="edit-ico table-ico" src="images/svg/edit-ico.svg" alt="Boutton modifier">
-                            <img class="trash-ico table-ico" src="images/svg/trash-ico.svg" alt="Boutton supprimer">
-                        </div>
-                    </td>
-                </tr>
-            </table>
+            </div>
             <div class="plate-add">AJOUTER UNE PLAQUE</div>
         </div>
     </div>
