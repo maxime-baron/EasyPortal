@@ -42,7 +42,7 @@
                         foreach ($json['result'][$key]['plates'] as $key2 => $val) {
                             echo '<div class="tr nex table-row">';
                             echo '<div class = "plate-number cell">' . $val['plateNumber'] . '</div>';
-                            echo '<div class = "cell">21/06/2022 10h34</div>';
+                            // echo '<div class = "cell">21/06/2022 10h34</div>';
                             echo '<div class = "cell">
                                     <div class="table-img">
                                         <img class="edit-ico table-ico" src="images/svg/edit-ico.svg" alt="Boutton modifier">
@@ -63,24 +63,27 @@
     </div>
     <script>
         /* ICONE MODIFICATION*/
-        const editIcones = document.querySelectorAll(".edit-ico")
+        var editIcones = document.querySelectorAll(".edit-ico")
+        console.log(editIcones)
         editIcones.forEach((editIcon) => {
             editIcon.addEventListener('click', () => {
                 var editRow = editIcon.parentElement.parentElement.parentElement
                 var editRowContent = editIcon.parentElement.parentElement.parentElement.innerHTML
                 let previousText = editIcon.parentElement.parentElement.previousElementSibling.textContent
-                editIcon.parentElement.parentElement.parentElement.innerHTML = '<td class="plate-number"><input type="text" name="Plate" class="edit-plate" placeholder="' + previousText + '" value="' + previousText + '"></td><td><div class="table-img"><img class="check-ico table-ico" src="images/svg/check-icon.svg" alt="Boutton modifier"></div></td>'
+                editIcon.parentElement.parentElement.parentElement.innerHTML = '<div class = "plate-number cell"><input type="text" name="Plate" class="edit-plate" placeholder="' + previousText + '" value="' + previousText + '"></div><div class = "cell"><div class="table-img"><img class="check-ico table-ico" src="images/svg/check-icon.svg" alt="Boutton modifier"></div></div>'
                 document.querySelector(".edit-plate").focus()
 
                 document.querySelector(".check-ico").addEventListener('click', async () => {
-                    let response = await fetch('https://56b8d581-5d36-4015-9a80-a6276891b681.mock.pstmn.io/modifierPlaque?owner=' + <?= $_SESSION['username'] ?> + '&lastPlateNumber=' + previousText + '&platenumber=' + document.querySelector(".edit-plate"))
+                    let newVal = document.querySelector(".edit-plate").value;
+                    let response = await fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/modifierPlaque.php?platenumber=' + previousText + '&newplatenumber=' + newVal)
                     let data = await response.json()
                     console.log(data)
                     if (data.success == true) {
-                        var newPlate = data.result.plate.plateNumber;
+                        document.querySelector(".check-ico").parentElement.parentElement.parentElement.innerHTML = editRowContent
+                        editRow.firstChild.childNodes[0].data = newVal
+                        editIcones = document.querySelectorAll(".edit-ico")
+                        console.log(editIcones)
                     }
-                    document.querySelector(".check-ico").parentElement.parentElement.parentElement.innerHTML = editRowContent
-                    editRow.firstChild.nextElementSibling.childNodes[0].data = newPlate
                 })
             })
         })
