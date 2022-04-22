@@ -14,7 +14,9 @@
 <body>
     <div class="content">
         <div class="left-side">
-            <div class="left-side-div camera-render"></div>
+            <div class="left-side-div camera-render">
+                <iframe src="http://172.16.200.147:8081" frameborder="0" scrolling="yes" style="width: 100%;height: 100%;"></iframe>
+            </div>
             <div class="left-side-div logs"></div>
         </div>
         <div class="dashboard">
