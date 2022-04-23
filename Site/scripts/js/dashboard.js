@@ -20,7 +20,7 @@ addUser.addEventListener("click", () => {
 
     formAdd.addEventListener('submit', (e) => {
         e.preventDefault()
-        fetch('https://0d5987d2-70b7-4a7d-a8bd-6ee8c8d649dc.mock.pstmn.io/ajouterUtilisateur?username=' + formAddUsername.value + '&firtName=' + formAddFirstName.value + '&lastName=' + formAddLastName.value + '&perm=' + formAddPerm.value)
+        fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + formAddUsername.value + '&firtName=' + formAddFirstName.value + '&lastName=' + formAddLastName.value + '&perm=' + formAddPerm.value)
             .then((response) => response.json())
             .then(data => {
                 console.log(data)
@@ -62,7 +62,7 @@ addCSV.addEventListener("click", () => {
                     let addCSVLastName = element[2]
                     let addCSVPerm = element[3]
 
-                    let response = await fetch('https://0d5987d2-70b7-4a7d-a8bd-6ee8c8d649dc.mock.pstmn.io/ajouterUtilisateur?username=' + addCSVUser + '&firtName=' + addCSVFirstName + '&lastName=' + addCSVLastName + '&perm=' + addCSVPerm)
+                    let response = await fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + addCSVUser + '&firtName=' + addCSVFirstName + '&lastName=' + addCSVLastName + '&perm=' + addCSVPerm)
                     let data = await response.json()
                     console.log(data)
                     if (data.success == true) {
