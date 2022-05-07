@@ -26,11 +26,12 @@ document.body.addEventListener("click", (e) => {
 
 /* ICONE SUPPRESSION*/
 document.body.addEventListener("click", (e) => {
-    if (e.target.classList.contains("trash-ico")) {
+    if (e.target.classList.contains("trash-ico") && e.target.classList.contains("del-plate")) {
         var editRow = e.target.parentElement.parentElement.parentElement
-        var editRowContent = e.target.parentElement.parentElement.parentElement.innerHTML
-        let previousText = e.target.parentElement.parentElement.previousElementSibling.textContent
-        e.target.parentElement.parentElement.parentElement.innerHTML = '<div class = "plate-number cell">' + previousText + '</div><div class = "cell"><div class="table-img"><img class="check-ico table-ico" src="images/svg/check-icon.svg" alt="Boutton modifier"><img class="cancel-ico table-ico" src="images/svg/cancel-ico.svg" alt="Boutton annuler"></div></div>'
+        var editRowContent = e.target.parentElement.parentElement.parentElement.lastChild.innerHTML
+        let previousText = e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.textContent
+        e.target.parentElement.parentElement.parentElement.style.justifyContent = "space between"
+        e.target.parentElement.parentElement.parentElement.lastChild.innerHTML = '<div class="table-img"><img class="check-ico table-ico" src="images/svg/check-icon.svg" alt="Boutton modifier"><img class="cancel-ico table-ico" src="images/svg/cancel-ico.svg" alt="Boutton annuler"></div>'
 
         document.querySelector(".check-ico").addEventListener('click', async () => {
             let response = await fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/supprimerPlaque.php?platenumber=' + previousText)
@@ -42,7 +43,7 @@ document.body.addEventListener("click", (e) => {
         })
 
         document.querySelector(".cancel-ico").addEventListener('click', () => {
-            document.querySelector(".cancel-ico").parentNode.parentNode.parentNode.innerHTML = editRowContent;
+            document.querySelector(".cancel-ico").parentNode.parentNode.innerHTML = editRowContent;
         })
     }
 })
