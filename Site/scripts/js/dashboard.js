@@ -20,7 +20,7 @@ addUser.addEventListener("click", () => {
 
     formAdd.addEventListener('submit', (e) => {
         e.preventDefault()
-        fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + formAddUsername.value + '&firtName=' + formAddFirstName.value + '&lastName=' + formAddLastName.value + '&perm=' + formAddPerm.value)
+        fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + formAddUsername.value + '&firstname=' + formAddFirstName.value + '&lastname=' + formAddLastName.value + '&perm=' + formAddPerm.value + '&password=' + genere_mdp(4, true, true, true))
             .then((response) => response.json())
             .then(data => {
                 console.log(data)
@@ -62,7 +62,9 @@ addCSV.addEventListener("click", () => {
                     let addCSVLastName = element[2]
                     let addCSVPerm = element[3]
 
-                    let response = await fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + addCSVUser + '&firtName=' + addCSVFirstName + '&lastName=' + addCSVLastName + '&perm=' + addCSVPerm)
+                    console.log(element);
+
+                    let response = await fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + addCSVUser + '&firstname=' + addCSVFirstName + '&lastname=' + addCSVLastName + '&perm=' + addCSVPerm + '&password=' + genere_mdp(4, true, true, true))
                     let data = await response.json()
                     console.log(data)
                     if (data.success == true) {
@@ -148,3 +150,21 @@ menuClose.addEventListener("click", () => {
     menuClose.style.transformOrigin = "50% 50%"
     menuClose.style.transform = "rotateZ(-720deg)"
 })
+
+function genere_mdp(nombreCaracteres, activateMAJ, activateMin, activateNumber) {
+    var array = "", rand_pass = "";
+    if (activateMAJ) {
+        array += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+    if (activateMin) {
+        array += "abcdefghijklmnopqrstuvwxyz";
+    }
+    if (activateNumber) {
+        array += "01234567890123456789";
+        // On répète 2 fois les chiffres sinon ils sortent rarement
+    }
+    for (var i = 0; i < nombreCaracteres; i++) {
+        rand_pass += array[Math.floor(Math.random() * array.length)];
+    }
+    return rand_pass;
+}

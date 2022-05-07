@@ -74,7 +74,7 @@ if (isset($_GET['username'], $_GET['password'])) {
         </script>';
     }
 
-    if ($access == false) {
+    if ($access == false && isset($_GET['password'])) {
         echo '<script>
         document.querySelector(".error").innerHTML ="Vôtre accés est bloqué"
         document.querySelector(".error").classList.add("show")
