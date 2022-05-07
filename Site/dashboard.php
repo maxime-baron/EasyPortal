@@ -142,6 +142,7 @@
     </div>
     <script src="scripts/lib/papaparse.min.js"></script>
     <script src="scripts/js/dashboard.js"></script>
+    <script src="scripts/js/editTableAdmin.js"></script>
 </body>
 
 </html>

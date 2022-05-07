@@ -325,6 +325,18 @@ nav {
     display: none;
 }
 
+.plate-number {
+    padding: 0 3% !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+.edit-plate {
+    width: 100% !important;
+    text-align: center !important;
+    border: 0px !important;
+}
+
 @media screen and (max-width:1024px) and (min-width:500px) {
 
     html {
