@@ -1,3 +1,8 @@
+<?php
+if (isset($_SESSION['username']) == false) {
+    header('Location:http://51.210.151.13/btssnir/projets2022/easyportal/site/login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
