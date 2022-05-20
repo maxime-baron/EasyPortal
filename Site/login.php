@@ -1,6 +1,5 @@
 <?php
 if (isset($_GET['username'], $_GET['password'])) {
-    $username = 'djboss';
 
     $curl = curl_init();
     $url = 'http://51.210.151.13/btssnir/projets2022/easyportal/api/connexion.php?username=' . $_GET['username'] . '&password=' . $_GET['password'];
