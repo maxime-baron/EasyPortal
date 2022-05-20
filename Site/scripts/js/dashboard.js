@@ -168,3 +168,18 @@ function genere_mdp(nombreCaracteres, activateMAJ, activateMin, activateNumber) 
     }
     return rand_pass;
 }
+
+let click = true
+/* ICONE MODIFICATION USER*/
+document.body.addEventListener("click", (e) => {
+    if (e.target.classList.contains("pswd")) {
+
+        if (click == true) {
+            e.target.style.filter = "blur(0px)"
+            click = false
+        } else {
+            e.target.style.filter = "blur(3px)"
+            click = true
+        }
+    }
+})

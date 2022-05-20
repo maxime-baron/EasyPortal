@@ -225,7 +225,7 @@ nav {
 
 .tr .cell {
     width: 19%;
-    padding: 0 3%;
+    padding: 0 10px;
     box-sizing: border-box;
 }
 
@@ -331,10 +331,21 @@ nav {
     width: 100% !important;
 }
 
-.edit-plate {
+/* .edit-plate {
+    
+} */
+
+.table-row .edit-inpt {
     width: 100% !important;
     text-align: center !important;
     border: 0px !important;
+    font-weight: 300 !important;
+    font-size: 1vw !important;
+}
+
+.pswd {
+    filter: blur(3px);
+    cursor: pointer;
 }
 
 @media screen and (max-width:1024px) and (min-width:500px) {

@@ -64,8 +64,9 @@
                 <div class="table">
                     <div class="tr nex table-header">
                         <div class="cell">Username</div>
-                        <div class="cell">Prénom</div>
+                        <div class="cell">Password</div>
                         <div class="cell">Nom</div>
+                        <div class="cell">Prénom</div>
                         <div class="cell">Groupe</div>
                         <div class="cell"></div>
                     </div>
@@ -87,8 +88,9 @@
                             // var_dump($json['result']);
                             echo '<div class="tr nex table-row">';
                             echo '<div class = "cell">' . $json['result'][$key]['username'] . '</div>';
-                            echo '<div class = "cell">' . $json['result'][$key]['firstname'] . '</div>';
+                            echo '<div class = "cell pswd">' . $json['result'][$key]['password'] . '</div>';
                             echo '<div class = "cell">' . $json['result'][$key]['lastname'] . '</div>';
+                            echo '<div class = "cell">' . $json['result'][$key]['firstname'] . '</div>';
                             echo '<div class = "cell">' . $json['result'][$key]['perm'] . '</div>';
                             echo '<div class = "cell">
                                     <div class="table-img">
