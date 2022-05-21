@@ -5,6 +5,11 @@ const modal = document.querySelector('#modal');
 const modalBody = document.querySelector('.modal-body');
 
 openButton.addEventListener("click", () => {
+    fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/open.php?username=' + username)
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+        });
     console.log("Ouverture")
 })
 

@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_SESSION['username']) == false) {
     header('Location:http://51.210.151.13/btssnir/projets2022/easyportal/site/login.php');
 }
@@ -147,6 +148,9 @@ if (isset($_SESSION['username']) == false) {
             <h2>CAMERA</h2>
         </div>
     </div>
+    <script>
+        const username = "<?= $_SESSION['username'] ?>";
+    </script>
     <script src="scripts/lib/papaparse.min.js"></script>
     <script src="scripts/js/dashboard.js"></script>
     <script src="scripts/js/editTableAdmin.js"></script>

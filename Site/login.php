@@ -12,6 +12,7 @@ if (isset($_GET['username'], $_GET['password'])) {
         echo $e;
     } else {
         $json = json_decode($response, true);
+        var_dump($json);
         if ($json['success'] == true) {
             if ($json['status'] == 'admin') {
                 session_start();

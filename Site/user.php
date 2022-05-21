@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_SESSION['username']) == false) {
     header('Location:http://51.210.151.13/btssnir/projets2022/easyportal/site/login.php');
 }
@@ -29,7 +30,6 @@ if (isset($_SESSION['username']) == false) {
             <h2>MES PLAQUES </h2>
             <div class="table">
                 <?php
-                session_start();
                 $username = $_SESSION['username'];
 
                 $curl = curl_init();
@@ -67,7 +67,17 @@ if (isset($_SESSION['username']) == false) {
         </div>
     </div>
     <script type="text/javascript">
+        const openButton = document.querySelector('.open-button');
         const username = '<?= $username ?>';
+
+        openButton.addEventListener("click", () => {
+            fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/open.php?username=' + username)
+                .then((response) => response.json())
+                .then(data => {
+                    console.log(data)
+                });
+            console.log("Ouverture")
+        })
     </script>
     <script src="scripts/js/editTable.js"></script>
 </body>
