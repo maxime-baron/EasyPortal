@@ -136,22 +136,26 @@ const menuClose = document.querySelector(".menu-close")
 const menu = document.querySelector(".menu")
 
 window.onload = () => {
-    menu.style.transform = "translate(" + menu.clientWidth + "px)"
+    menu.style.transformOrigin = "right"
+    menu.style.transform = "scaleX(0)"
 }
 
 window.onresize = () => {
-    menu.style.transform = "translate(" + menu.clientWidth + "px)"
+    menu.style.transformOrigin = "right"
+    menu.style.transform = "scaleX(0)"
 }
 
 menuOpen.addEventListener("click", () => {
-    menu.style.transform = "translate(0px)"
+    menu.style.transformOrigin = "right"
+    menu.style.transform = "scaleX(1)"
     menuClose.style.transformOrigin = "50% 50%"
     menuClose.style.transform = "rotateZ(720deg)"
 })
 
 menuClose.addEventListener("click", () => {
     console.log(menu.clientWidth)
-    menu.style.transform = "translate(" + menu.clientWidth + "px)"
+    menu.style.transformOrigin = "right"
+    menu.style.transform = "scaleX(0)"
     menuClose.style.transformOrigin = "50% 50%"
     menuClose.style.transform = "rotateZ(-720deg)"
 })
