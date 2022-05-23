@@ -23,7 +23,31 @@ if (isset($_SESSION['username']) == false) {
             <div class="left-side-div camera-render">
                 <iframe src="http://172.16.200.147:8081" frameborder="0" scrolling="yes" style="width: 100%;height: 100%;"></iframe>
             </div>
-            <div class="left-side-div logs"></div>
+            <div class="left-side-div logs">
+                <?php
+
+                $curl = curl_init();
+                $url = 'http://51.210.151.13/btssnir/projets2022/easyportal/api/logs.php';
+
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+                $response = curl_exec($curl);
+
+                if ($e = curl_error($curl)) {
+                    echo $e;
+                } else {
+                    $json = json_decode($response, true);
+                    // var_dump($json);
+                    foreach ($json['result']['results'] as $key) {
+                        // var_dump($key);
+                        $date = new DateTime($key['date']);
+                        $r = ($key['methode'] == 'le site') ? $key['methode'] : $key['methode'] . " <span style='font-weight:bold'>" . $key['plate'] . "</span>";
+                        echo '<span class="log">' . date_format($date, 'd-m-Y H:i') . ' : <span style="font-weight:bold">' . $key['user'] . '</span> a ouvert le portaille avec ' . $r . '</span>';
+                    }
+                }
+                ?>
+            </div>
         </div>
         <div class="dashboard">
             <nav>
@@ -78,11 +102,8 @@ if (isset($_SESSION['username']) == false) {
                     </div>
                     <?php
 
-                    $curl = curl_init();
                     $url = 'http://51.210.151.13/btssnir/projets2022/easyportal/api/utilisateurs.php';
-
                     curl_setopt($curl, CURLOPT_URL, $url);
-                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                     $response = curl_exec($curl);
 
