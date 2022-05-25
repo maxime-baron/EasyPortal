@@ -12,13 +12,13 @@ if (isset($_GET['username'], $_GET['password'])) {
         echo $e;
     } else {
         $json = json_decode($response, true);
-        var_dump($json);
+        // var_dump($json);
         if ($json['success'] == true) {
-            if ($json['status'] == 'admin') {
+            if ($json['status'] == '2') {
                 session_start();
                 $_SESSION['username'] = $_GET['username'];
                 header('Location:http://51.210.151.13/btssnir/projets2022/easyportal/site/dashboard.php');
-            } elseif ($json['status'] == 'user') {
+            } elseif ($json['status'] == '1') {
                 session_start();
                 $_SESSION['username'] = $_GET['username'];
                 header('Location:http://51.210.151.13/btssnir/projets2022/easyportal/site/user.php');
@@ -74,7 +74,7 @@ if (isset($_GET['username'], $_GET['password'])) {
         </script>';
     }
 
-    if ($access == false && isset($_GET['password'])) {
+    if ($json['status'] == '0') {
         echo '<script>
         document.querySelector(".error").innerHTML ="Vôtre accés est bloqué"
         document.querySelector(".error").classList.add("show")

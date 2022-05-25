@@ -113,12 +113,19 @@ if (isset($_SESSION['username']) == false) {
                         $json = json_decode($response, true);
                         foreach ($json['result'] as $key => $value) {
                             // var_dump($json['result']);
+                            if ($json['result'][$key]['perm'] == "2") {
+                                $r = 'admin';
+                            } elseif ($json['result'][$key]['perm'] == "1") {
+                                $r = 'user';
+                            } else {
+                                $r = 'restricted';
+                            }
                             echo '<div class="tr nex table-row">';
                             echo '<div class = "cell">' . $json['result'][$key]['username'] . '</div>';
                             echo '<div class = "cell pswd">' . $json['result'][$key]['password'] . '</div>';
                             echo '<div class = "cell">' . $json['result'][$key]['lastname'] . '</div>';
                             echo '<div class = "cell">' . $json['result'][$key]['firstname'] . '</div>';
-                            echo '<div class = "cell">' . $json['result'][$key]['perm'] . '</div>';
+                            echo '<div class = "cell">' . $r . '</div>';
                             echo '<div class = "cell">
                                     <div class="table-img">
                                         <img class="arrow-ico nClick table-ico" src="images/svg/arrow-icon.svg" alt="Flêche d\'éxtention">
