@@ -88,6 +88,8 @@ document.body.addEventListener("click", (e) => {
             if (data.success == true) {
                 document.querySelector(".check-ico").parentNode.parentNode.previousElementSibling.innerText = inpt.value
                 document.querySelector(".check-ico").parentNode.parentNode.innerHTML = '<div class="table-img"><img class="edit-ico table-ico" src="images/svg/edit-ico.svg" alt="Boutton modifier"><img class="trash-ico table-ico" src="images/svg/trash-ico.svg" alt="Boutton supprimer"></div>'
+            } else {
+                div.remove()
             }
         })
     }
