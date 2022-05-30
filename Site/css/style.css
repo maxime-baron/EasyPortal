@@ -95,64 +95,7 @@ nav {
     flex-direction: column;
     align-content: flex-start;
     justify-content: space-between;
-    width: 45%;
-}
-
-.stats {
-    max-height: 60px;
-    height: 100%;
-    max-width: 140px;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.stat-label {
-    margin-left: 5%;
-}
-
-.stats span {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.8vw;
-    color: #FFFFFF;
-
-    width: 42px;
-    height: 48px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.stats p {
-    width: 100%;
-    font-weight: 500;
-    font-size: 0.8em;
-}
-
-.week-stats {
-    background: #D6FFD5;
-    border-radius: 12px;
-    margin: 0 0 8px 0;
-}
-
-.week-stats span {
-    background-image: url(../images/svg/week-form.svg);
-    background-repeat: no-repeat;
-}
-
-.day-stats {
-    background: #FFF4D7;
-    border-radius: 12px;
-}
-
-.day-stats span {
-    background-image: url(../images/svg/day-form.svg);
-    background-repeat: no-repeat;
+    width: 47%;
 }
 
 .open-button {
@@ -170,6 +113,22 @@ nav {
 .open-button:hover {
     background: #e2c9fc;
     transition: ease-in 0.2s;
+}
+
+.leftButton {
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 44%;
+}
+
+.quit {
+    background-color: #ff414136;
+}
+
+.export {
+    background-color: #DAFFD9;
 }
 
 .user-action {
@@ -416,19 +375,6 @@ nav {
         display: none;
     }
 
-    .stats {
-        width: 100%;
-        max-width: none;
-    }
-
-    .stat-label {
-        font-size: 1.3rem;
-    }
-
-    .stats span {
-        font-size: 2rem;
-    }
-
     .dashboard {
         margin: 0 auto;
         width: 50%;
@@ -574,19 +520,6 @@ nav {
     .left-displ {
         width: 50%;
         max-width: none;
-    }
-
-    .stats {
-        width: 97%;
-        max-width: none;
-    }
-
-    .stats p {
-        font-size: 1.3rem;
-    }
-
-    .stats span {
-        font-size: 1.6rem;
     }
 
     .open-button {

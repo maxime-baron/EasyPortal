@@ -60,13 +60,11 @@ if (isset($_SESSION['username']) == false) {
                 </div>
                 <div class="displ">
                     <div class="left-displ">
-                        <div class="week-stats stats">
-                            <span class="stat-value">0</span>
-                            <p class="stat-label">Utilisation cette semaine...</p>
+                        <div class="leftButton quit">
+                            <img src="images/svg/door-icon.svg" alt="Icone d'ouverture de porte">
                         </div>
-                        <div class="day-stats stats">
-                            <span class="stat-value">0</span>
-                            <p class="stat-label">Utilisation ce jour...</p>
+                        <div class="leftButton export">
+                            <img src="images/svg/door-icon.svg" alt="Icone d'ouverture de porte">
                         </div>
                     </div>
                     <div class="open-button">
