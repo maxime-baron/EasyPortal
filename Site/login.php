@@ -1,4 +1,6 @@
 <?php
+session_start();
+session_unset();
 if (isset($_GET['username'], $_GET['password'])) {
 
     $curl = curl_init();

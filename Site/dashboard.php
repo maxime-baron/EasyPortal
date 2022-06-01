@@ -61,10 +61,10 @@ if (isset($_SESSION['username']) == false) {
                 <div class="displ">
                     <div class="left-displ">
                         <div class="leftButton quit">
-                            <img src="images/svg/door-icon.svg" alt="Icone d'ouverture de porte">
+                            <img src="images/svg/quit-icon.svg" alt="Icone d'ouverture de porte">
                         </div>
                         <div class="leftButton export">
-                            <img src="images/svg/door-icon.svg" alt="Icone d'ouverture de porte">
+                            <img src="images/svg/export-icon.svg" alt="Icone d'ouverture de porte">
                         </div>
                     </div>
                     <div class="open-button">
@@ -176,6 +176,11 @@ if (isset($_SESSION['username']) == false) {
     </div>
     <script>
         const username = "<?= $_SESSION['username'] ?>";
+        const quitButton = document.querySelector('.quit');
+
+        quitButton.addEventListener("click", () => {
+            location.href = "login.php"
+        })
     </script>
     <script src="scripts/lib/papaparse.min.js"></script>
     <script src="scripts/js/dashboard.js"></script>

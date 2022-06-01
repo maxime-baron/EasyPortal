@@ -1,9 +1,11 @@
 const openButton = document.querySelector('.open-button');
+const exportButton = document.querySelector('.export');
 const addUser = document.querySelector('.add-user');
 const addCSV = document.querySelector('.csv-user');
 const modal = document.querySelector('#modal');
 const modalBody = document.querySelector('.modal-body');
 
+/* BOUTON OUVRIR */
 openButton.addEventListener("click", () => {
     fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/open.php?username=' + username)
         .then((response) => response.json())
@@ -11,6 +13,26 @@ openButton.addEventListener("click", () => {
             console.log(data)
         });
     console.log("Ouverture")
+})
+/* BOUTON EXPORT */
+exportButton.addEventListener("click", () => {
+    fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/utilisateurs.php')
+        .then((response) => response.json())
+        .then(data => {
+            let user = Papa.unparse(data.result)
+            console.log(data.result)
+            console.log(user);
+            let plates = Papa.unparse(data.result.plates.json())
+            console.log(plates);
+        });
+    console.log("Ouverture")
+    let csvContent = "data:text/csv;charset=utf-8," + plates;
+    let encodedUri = encodeURI(csvContent);
+    let link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "my_data.csv");
+    document.body.appendChild(link);
+    link.click();
 })
 
 addUser.addEventListener("click", () => {
@@ -25,7 +47,7 @@ addUser.addEventListener("click", () => {
 
     formAdd.addEventListener('submit', (e) => {
         e.preventDefault()
-        fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + formAddUsername.value + '&firstname=' + formAddFirstName.value + '&lastname=' + formAddLastName.value + '&perm=' + formAddPerm.value + '&password=' + genere_mdp(4, true, true, true))
+        fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + formAddUsername.value + '&firstname=' + formAddFirstName.value + '&lastname=' + formAddLastName.value + '&perm=' + formAddPerm.value)
             .then((response) => response.json())
             .then(data => {
                 console.log(data)
@@ -69,7 +91,7 @@ addCSV.addEventListener("click", () => {
 
                     console.log(element);
 
-                    let response = await fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + addCSVUser + '&firstname=' + addCSVFirstName + '&lastname=' + addCSVLastName + '&perm=' + addCSVPerm + '&password=' + genere_mdp(4, true, true, true))
+                    let response = await fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + addCSVUser + '&firstname=' + addCSVFirstName + '&lastname=' + addCSVLastName + '&perm=' + addCSVPerm)
                     let data = await response.json()
                     console.log(data)
                     if (data.success == true) {
@@ -160,23 +182,6 @@ menuClose.addEventListener("click", () => {
     menuClose.style.transform = "rotateZ(-720deg)"
 })
 
-function genere_mdp(nombreCaracteres, activateMAJ, activateMin, activateNumber) {
-    var array = "", rand_pass = "";
-    if (activateMAJ) {
-        array += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    }
-    if (activateMin) {
-        array += "abcdefghijklmnopqrstuvwxyz";
-    }
-    if (activateNumber) {
-        array += "01234567890123456789";
-        // On répète 2 fois les chiffres sinon ils sortent rarement
-    }
-    for (var i = 0; i < nombreCaracteres; i++) {
-        rand_pass += array[Math.floor(Math.random() * array.length)];
-    }
-    return rand_pass;
-}
 
 let click = true
 /* ICONE MODIFICATION USER*/

@@ -95,14 +95,14 @@ nav {
     flex-direction: column;
     align-content: flex-start;
     justify-content: space-between;
-    width: 47%;
+    width: 30%;
 }
 
 .open-button {
     max-height: 140px;
     height: 100%;
     max-width: 140px;
-    width: 45%;
+    width: 63%;
     background: #EEDDFF;
     border-radius: 12px;
     padding: 13px;
@@ -119,16 +119,29 @@ nav {
     border-radius: 12px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     height: 44%;
+    cursor: pointer;
 }
 
 .quit {
     background-color: #ff414136;
+    transition: ease-in 0.2s;
+}
+
+.quit:hover {
+    background-color: #ff414163;
+    transition: ease-in 0.2s;
 }
 
 .export {
     background-color: #DAFFD9;
+    transition: ease-in 0.2s;
+}
+
+.export:hover {
+    background-color: #bbffb9;
+    transition: ease-in 0.2s;
 }
 
 .user-action {
