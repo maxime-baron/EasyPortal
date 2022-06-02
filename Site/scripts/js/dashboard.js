@@ -44,7 +44,7 @@ exportButton.addEventListener("click", () => {
 
 addUser.addEventListener("click", () => {
     console.log("Ajout d'un utilisateur");
-    modalBody.innerHTML = '<h2 class="modal-header-title">Ajouter un utilisateur</h2><form action="" method="" class="addUser"><input type="text" name="username" id="usernameInput" placeholder="Username"><input type="text" name="prénom" id="firstNameInput" placeholder="Prénom"><input type="text" name="nom" id="lastNameInput" placeholder="Nom"><input type="text" name="" id="roleInput" placeholder="Rôle"><span class="formError">Erreur</span><input type="submit" value="Enregistrer"></form>';
+    modalBody.innerHTML = '<h2 class="modal-header-title">Ajouter un utilisateur</h2><form action="" method="" class="addUser"><input type="text" name="username" id="usernameInput" placeholder="Username"><input type="text" name="prénom" id="firstNameInput" placeholder="Prénom"><input type="text" name="nom" id="lastNameInput" placeholder="Nom"><select name="Groupe" id="roleInput"><option value="0">Restricted</option><option value="1">User</option><option value="2">Admin</option></select><span class="formError">Erreur</span><input type="submit" value="Enregistrer"></form>';
     /* CONSTANTE DU FORMULAIRE*/
     const formAdd = document.querySelector('.addUser')
     const formAddUsername = document.querySelector('#usernameInput');

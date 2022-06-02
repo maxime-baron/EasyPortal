@@ -5,11 +5,11 @@ document.body.addEventListener("click", (e) => {
         var editRowContent = e.target.parentElement.parentElement.parentElement.innerHTML
         let previousText = e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.textContent
         e.target.parentElement.parentElement.parentElement.style.justifyContent = "space between"
-        e.target.parentElement.parentElement.parentElement.innerHTML = '<div class = "plate-number cell"><input type="text" name="Plate" class="edit-plate" placeholder="' + previousText + '" value="' + previousText + '"></div><div class = "cell"><div class="table-img"><img class="check-ico table-ico" src="images/svg/check-icon.svg" alt="Boutton modifier"></div></div>'
-        document.querySelector(".edit-plate").focus()
+        e.target.parentElement.parentElement.parentElement.innerHTML = '<div class = "plate-number cell"><input type="text" name="Plate" class="edit-plate-inpt" placeholder="' + previousText + '" value="' + previousText + '"></div><div class = "cell"><div class="table-img"><img class="check-ico table-ico" src="images/svg/check-icon.svg" alt="Boutton modifier"></div></div>'
+        document.querySelector(".edit-plate-inpt").focus()
 
         document.querySelector(".check-ico").addEventListener('click', async () => {
-            let newVal = document.querySelector(".edit-plate").value;
+            let newVal = document.querySelector(".edit-plate-inpt").value;
             let response = await fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/modifierPlaque.php?platenumber=' + previousText + '&newplatenumber=' + newVal)
             let data = await response.json()
             console.log(data)

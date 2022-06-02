@@ -135,13 +135,13 @@ if (isset($_SESSION['username']) == false) {
                             echo '<div class="table extended hide">
                             <div class="tr ex table-header">
                                 <div class="cell-e">Numéro de plaque </div>
-                                <div class="cell-e">Derniére utilisation</div>
+                                <!--<div class="cell-e">Derniére utilisation</div>-->
                                 <div class="cell-e"></div>
                             </div>';
                             foreach ($json['result'][$key]['plates'] as $key2 => $val) {
                                 echo '<div class="tr ex table-row">';
                                 echo '<div class="cell-e">' . $val['plateNumber'] . '</div>';
-                                echo '<div class="cell-e">21/06/2022 10h34</div>
+                                echo '<!--<div class="cell-e">21/06/2022 10h34</div>-->
                                     <div class="cell-e">
                                         <div class="table-img">
                                             <img class="edit-ico table-ico edit-plate" src="images/svg/edit-ico.svg" alt="Boutton modifier">
