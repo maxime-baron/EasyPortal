@@ -305,16 +305,17 @@ nav {
     width: 100% !important;
 }
 
-/* .edit-plate {
-    
-} */
-
 .table-row .edit-inpt {
     width: 100% !important;
     text-align: center !important;
     border: 0px !important;
     font-weight: 300 !important;
-    font-size: 1vw !important;
+    font-size: 1rem;
+}
+
+.cell,
+.cell-e {
+    font-size: 1rem;
 }
 
 .pswd {
@@ -408,6 +409,10 @@ nav {
     .cell,
     .cell-e {
         font-size: 1.5rem;
+    }
+
+    .table-row .edit-inpt {
+        font-size: 1.4rem;
     }
 
     .menu {

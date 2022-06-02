@@ -24,10 +24,7 @@ exportButton.addEventListener("click", () => {
                 delete data.result[i].plates;
             }
 
-            console.log(data.result);
             let user = Papa.unparse(data.result, { header: true })
-            console.log(data.result)
-
             let blob = new Blob([user], { type: 'application/json' })
             let href = URL.createObjectURL(blob);
             Object.assign
@@ -89,7 +86,6 @@ addCSV.addEventListener("click", () => {
     const inputAddCSV = document.querySelector('#inputAddCSV');
     formAddCSV.addEventListener('submit', async (e) => {
         e.preventDefault()
-        console.log(inputAddCSV.value)
         Papa.parse(inputAddCSV.files[0], {
             complete: async function (results) {
                 let done = 0;
@@ -98,8 +94,6 @@ addCSV.addEventListener("click", () => {
                     let addCSVFirstName = element[1]
                     let addCSVLastName = element[2]
                     let addCSVPerm = element[3]
-
-                    console.log(element);
 
                     let response = await fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/ajouterUtilisateur.php?username=' + addCSVUser + '&firstname=' + addCSVFirstName + '&lastname=' + addCSVLastName + '&perm=' + addCSVPerm)
                     let data = await response.json()
@@ -151,7 +145,6 @@ function closeModal(modal) {
 const extendArrows = document.querySelectorAll('.nClick')
 extendArrows.forEach((extendArrow) => {
     extendArrow.addEventListener('click', () => {
-        console.log("extend")
         if (extendArrow.classList.contains("nClick")) {
             extendArrow.classList.replace("nClick", "click")
             extendArrow.parentElement.parentElement.parentElement.nextElementSibling.classList.remove("hide")
@@ -185,7 +178,6 @@ menuOpen.addEventListener("click", () => {
 })
 
 menuClose.addEventListener("click", () => {
-    console.log(menu.clientWidth)
     menu.style.transformOrigin = "right"
     menu.style.transform = "scaleX(0)"
     menuClose.style.transformOrigin = "50% 50%"
