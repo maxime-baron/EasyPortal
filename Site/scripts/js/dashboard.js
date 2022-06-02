@@ -19,32 +19,16 @@ exportButton.addEventListener("click", () => {
     fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/utilisateurs.php')
         .then((response) => response.json())
         .then(data => {
-            // let user = Papa.unparse(data.result, { header: true })
-            // console.log(data.result)
-
 
             for (var i in data.result) {
-                // result.push([i]);
-                // result[i].shift();
-                console.log(data.result[i].plates.length);
-                data.result[i].plates = "";
-                for (let y = 0; y < data.result[i].plates.length; y++) {
-                    console.log(data.result[i].plates[y].plateNumber);
-                    if (y < data.result[i].plates.length - 1) {
-                        data.result[i].plates += data.result[i].plates[y].plateNumber + ",";
-                    } else {
-                        data.result[i].plates += data.result[i].plates[y].plateNumber;
-                    }
-                }
+                delete data.result[i].plates;
             }
 
-
             console.log(data.result);
+            let user = Papa.unparse(data.result, { header: true })
+            console.log(data.result)
 
-            // let plates = Papa.unparse(data.result.plates)
-            // console.log(plates);
-
-            let blob = new Blob([user], { type: "octet-stream" })
+            let blob = new Blob([user], { type: 'application/json' })
             let href = URL.createObjectURL(blob);
             Object.assign
 
@@ -58,7 +42,7 @@ exportButton.addEventListener("click", () => {
             URL.revokeObjectURL(href)
             a.remove();
         });
-    console.log("Ouverture")
+    console.log("Exportation")
 })
 
 addUser.addEventListener("click", () => {
