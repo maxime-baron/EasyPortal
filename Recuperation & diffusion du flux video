@@ -1,0 +1,48 @@
+ Recuperation flux video
+
+//Activation de la camera
+    sudo raspi-config
+      Interface Options » 
+        Legacy Camera » 
+          Yes
+        
+//Installation du service motion
+    sudo apt install motion libavcodec-dev libavformat-dev libavutil-dev libjpeg-dev libjpeg62-turbo-dev libpq-dev libswresample-dev »
+      Yes
+    
+//Template de configuration du service motion a recuperer
+    wget https://www.dropbox.com/s/6ruqgv1h65zufr6/motion-mmal-lowflyerUK-20151114.tar.gz
+  
+//Extraire les fichiers de l'archive
+    tar -zxvf motion-mmal-lowflyerUK-20151114.tar.gz
+
+Diffusion flux video
+
+//Demarrer le service motion
+    sudo motion -c motion-mmalcam-both.conf
+
+LXTerminal
+//Démarrer le service motion (flux vidéo de la caméra Raspberry) : 
+  sudo motion -c motion-mmalcam-both.conf »
+    Yes
+
+//Démarrer automatiquement le service motion
+  systemctl start motion
+    puis
+      reboot
+
+//Arrêter le service motion
+  systemctl stop motion
+		
+//Réactiver le service motion
+  systemctl start motion
+  sudo motion -c motion-mmalcam-both.conf
+
+//Récupérer l’adresse IP de la Raspberry
+  ifconfig ou maintenir la souris sur 
+
+	
+Navigateur web
+
+//Visualiser le flux vidéo sur une page web :
+  http://<RASPBERRY_IP>:8081
