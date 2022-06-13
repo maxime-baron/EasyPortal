@@ -6,17 +6,22 @@ const modal = document.querySelector('#modal');
 const modalBody = document.querySelector('.modal-body');
 
 /* BOUTON OUVRIR */
-openButton.addEventListener("click", () => {
-    fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/open.php?username=' + username)
+openButton.addEventListener("click", async () => {
+    let data = await fetch('http://localhost/easyportal/api/open.php?username=' + username)
         .then((response) => response.json())
-        .then(data => {
-            console.log(data)
-        });
-    console.log("Ouverture")
+        // .then(data => {
+        //     console.log(data)
+        // });
+        console.log(data);
+    // if(data.success == true){
+    //     fetch('http://172.16.200.18/i2c.php')
+    //         .then((response))
+    //     console.log("Ouverture")
+    // }
 })
 /* BOUTON EXPORT */
 exportButton.addEventListener("click", () => {
-    fetch('http://51.210.151.13/btssnir/projets2022/easyportal/api/utilisateurs.php')
+    fetch('http://localhost/easyportal/api/utilisateurs.php')
         .then((response) => response.json())
         .then(data => {
 
