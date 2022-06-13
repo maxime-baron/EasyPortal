@@ -7,8 +7,8 @@ form.addEventListener("submit", (e) => {
     console.log("test");
 
     fetch('traitementLogin.php?username=' + username.value + '&password=' + password.value)
-    .then((response) => response.json())
-    .then(data => {
-        data.success?data.status=="user"?location.href = "user.php":location.href="dashboard.php":console.log("Wrong pass");
-    });
+        .then((response) => response.json())
+        .then(data => {
+            data.success ? data.status == "user" ? location.href = "user.php" : location.href = "dashboard.php" : console.log("Wrong pass");
+        });
 })

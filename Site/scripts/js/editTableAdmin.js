@@ -3,7 +3,7 @@ document.body.addEventListener("click", (e) => {
     if (e.target.classList.contains("edit-ico") && e.target.classList.contains("edit-plate")) {
         var editRow = e.target.parentElement.parentElement.parentElement
         var editRowContent = e.target.parentElement.parentElement.parentElement.innerHTML
-        let previousText = e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.textContent
+        let previousText = e.target.parentElement.parentElement.parentElement.firstChild.textContent
         e.target.parentElement.parentElement.parentElement.style.justifyContent = "space between"
         e.target.parentElement.parentElement.parentElement.innerHTML = '<div class = "plate-number cell"><input type="text" name="Plate" class="edit-plate-inpt" placeholder="' + previousText + '" value="' + previousText + '"></div><div class = "cell"><div class="table-img"><img class="check-ico table-ico" src="images/svg/check-icon.svg" alt="Boutton modifier"></div></div>'
         document.querySelector(".edit-plate-inpt").focus()
