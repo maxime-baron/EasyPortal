@@ -19,7 +19,7 @@ if (isset($_SESSION['username']) == false) {
 <body>
     <div class="content">
         <h1>EasyPortal</h1>
-        <div class="open-button">
+        <div class="open-button" style="cursor:pointer;">
             <div class="open-header">
                 <img src="images/svg/door-icon.svg" alt="">
                 <h2 class="open">Ouvrir</h2>
@@ -64,6 +64,9 @@ if (isset($_SESSION['username']) == false) {
                 ?>
             </div>
             <div class="plate-add">AJOUTER UNE PLAQUE</div>
+            <div class="leftButton quit" style="cursor:pointer;">
+                <img src="images/svg/quit-icon.svg" alt="Icone d'ouverture de porte">
+            </div>
         </div>
     </div>
     <script type="text/javascript">
@@ -77,6 +80,12 @@ if (isset($_SESSION['username']) == false) {
                     console.log(data)
                 });
             console.log("Ouverture")
+        })
+
+        const quitButton = document.querySelector('.quit');
+
+        quitButton.addEventListener("click", () => {
+            location.href = "login.php"
         })
     </script>
     <script src="scripts/js/editTable.js"></script>
