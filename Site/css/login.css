@@ -1,0 +1,124 @@
+body {
+    font-family: 'Roboto', Courier, monospace;
+    color: #404040;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login {
+    /* width: 20%;
+    height: 20%; */
+    flex-direction: column;
+    background: #E2F1F7;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Dancing Script';
+    font-weight: 500;
+    font-size: 64px;
+    /* margin-bottom: 10px; */
+    height: 0px;
+    z-index: 10;
+    position: relative;
+    bottom: 95px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #404040;
+    margin-bottom: 15px;
+}
+
+input {
+    background: white;
+
+    border: solid #E0E0E0 1px;
+    border-radius: 10px;
+
+    color: #404040;
+
+    font-size: 18px;
+    margin: 15px 0;
+
+}
+
+input::placeholder {
+    color: #E0E0E0;
+}
+
+input[type="text"],
+input[type="password"] {
+    height: 50px;
+    width: 330px;
+    padding-left: 20px;
+}
+
+input[type="submit"] {
+    color: #404040;
+
+    height: 50px;
+    width: 150px;
+
+}
+
+.error {
+    color: red;
+    font-size: 1em;
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+@media screen and (max-width:500px) {
+
+    html {
+        font-size: 10px;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    h2 {
+        font-size: 3.4rem;
+    }
+
+    .login {
+        padding: 15% 10%;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        height: 50px;
+        width: 100%;
+        padding-left: 20px;
+    }
+}
